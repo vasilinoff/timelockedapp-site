@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["65V9Z3874X.vaspondm.TimeLocked"],
+        "components": [
+          { "/": "/p/*", "comment": "Shared protocol invite" }
+        ]
+      }
+    ]
+  }
+}
