@@ -1,28 +1,180 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TimeLocked — a pause between impulse and action</title><style>*{box-sizing:border-box;margin:0;padding:0}
+<title>TimeLocked — lock a password away from yourself on iPhone</title>
+<meta name="description" content="TimeLocked is an iPhone app that locks a password, a code or a card PIN away from yourself. It opens only after a wait you choose, from an hour to a week, timed by Apple's iCloud servers.">
+<link rel="canonical" href="https://timelockedapp.com/">
+<meta name="apple-itunes-app" content="app-id=6775219353">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TimeLocked">
+<meta property="og:url" content="https://timelockedapp.com/">
+<meta property="og:title" content="TimeLocked — lock a password away from yourself">
+<meta property="og:description" content="An iPhone app that keeps a password, a code or a card PIN out of your own reach until a wait you choose has passed.">
+<meta name="twitter:card" content="summary">
+<!-- When 2.6 ships, every "from an hour to a week" / "up to a week" on this page, in the JSON-LD below and in /llms.txt becomes "up to 30 days". Each spot is marked with a WAIT-LENGTH comment. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "TimeLocked",
+      "alternateName": "TimeLocked: Self Control Lock",
+      "description": "An iPhone app that locks a password, a code or a card PIN away from yourself. It opens only after the wait you chose, timed by Apple's iCloud servers, not your phone's clock.",
+      "operatingSystem": "iOS 17.0 or later",
+      "applicationCategory": "UtilitiesApplication",
+      "url": "https://timelockedapp.com/",
+      "downloadUrl": "https://apps.apple.com/app/id6775219353",
+      "sameAs": ["https://apps.apple.com/app/id6775219353"],
+      "inLanguage": "en",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "In-app purchases: Premium"},
+      "featureList": [
+        "Lock a password, a code, a card PIN or photos behind a wait you choose",
+        "The wait starts when you ask and is timed by Apple's iCloud servers",
+        "What's inside an entry is encrypted with AES-256-GCM",
+        "Opens with Face ID or your iPhone passcode; optional master password"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Is there an iPhone app that locks a password away from myself for a set time?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes. TimeLocked does exactly that. Put in the password, a code or a card PIN, pick a wait and lock it. When you want it back, ask: the wait starts then, and the entry opens only when it's over. Waits run from an hour to a week. No friend needs to hold it for you."}},
+        {"@type": "Question", "name": "How do I lock myself out of a social media account for a few days?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Change the account's password, put the new password in TimeLocked, lock it, and log out. You get back in only once the wait you chose has passed after you ask for it."}},
+        {"@type": "Question", "name": "Can I lock my betting account password for a month?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the longest wait in TimeLocked today is a week. You can lock a betting login for up to a week and lock it again when it opens. For a month or longer, self-exclusion is the stronger tool: national schemes such as GAMSTOP in the UK, and the self-exclusion licensed operators offer, block the account itself, not just the password on your phone. If gambling is hurting you, free confidential help: 1-800-MY-RESET (1-800-697-3738) in the US, 0808 8020 133 in the UK."}},
+        {"@type": "Question", "name": "Is it safe to store passwords in TimeLocked?",
+         "acceptedAnswer": {"@type": "Answer", "text": "It's made for passwords and codes you want out of your own reach for a while, and for recovery codes. It is a delay, not a backup: keep your own copy of anything you can't afford to lose. What's inside an entry is encrypted with AES-256-GCM the moment you save; the name you give it isn't, so don't put the password in the name. The developer has no server of its own and can't read what you lock, so can't open it for you either. Anyone who can unlock your iPhone can open what's past its wait, unless you add a master password."}},
+        {"@type": "Question", "name": "Can I get it back early?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Once you ask, the entry opens only after the wait you chose. The wait is timed by Apple's iCloud servers, not by your phone's clock. You can make a wait longer whenever you like and it applies at once; make it shorter and the new length only takes effect once the old one has passed."}},
+        {"@type": "Question", "name": "What happens if I delete the app?",
+         "acceptedAnswer": {"@type": "Answer", "text": "For an entry that's in your iCloud, deleting the app doesn't end the wait: the key stays in your Keychain and the clock is Apple's. An entry that isn't in iCloud (sync is off, or it hasn't uploaded yet) is deleted with the app, unless you restore from a device backup. Photos and voice notes aren't synced to iCloud, so deleting the app deletes them, unless you restore from a device backup."}},
+        {"@type": "Question", "name": "Does TimeLocked need iCloud?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every wait needs an iCloud account on the phone: each request to open and each time check is a small record in your private iCloud, with nothing of what you locked in it. With iCloud sync off, entries aren't synced, but the wait still uses your iCloud account. Without one, you can save an entry but not ask for it or open it."}},
+        {"@type": "Question", "name": "Is TimeLocked free?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Every wait length, and opening what you locked, is free. Premium adds two things: closing the apps you pick while something waits, or every night on your schedule, and keeping more than three things in the Vault."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
 body{background:#f7f3ee;color:#2b2622;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:640px;margin:0 auto;padding:56px 22px 72px}
 a{color:#b06a4a}
 .brand{font-size:13px;letter-spacing:.10em;text-transform:uppercase;color:#8a8078;margin-bottom:28px}
 h1{font-size:34px;line-height:1.15;letter-spacing:-.6px;margin-bottom:14px}
+h2{font-size:22px;line-height:1.25;letter-spacing:-.3px;margin:44px 0 12px}
+h3{font-size:17px;line-height:1.35;margin:22px 0 6px}
+p{margin-bottom:12px}
 .lead{font-size:18px;color:#5f574f;margin-bottom:26px}
 .card{background:#fff;border:1px solid #e8e0d7;border-radius:18px;padding:24px;box-shadow:0 6px 22px rgba(176,106,74,.06)}
-.hold{display:inline-block;background:#f2e6de;color:#8a4f33;font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;margin-bottom:16px}
-ul{list-style:none;margin:18px 0 0}
+.card h3:first-child{margin-top:0}
+ul{list-style:none;margin:12px 0 0}
 li{padding:10px 0 10px 30px;position:relative;border-top:1px solid #f0e9e2}
 li:first-child{border-top:0}
 li:before{content:"";position:absolute;left:6px;top:18px;width:8px;height:8px;border-radius:50%;background:#b06a4a}
 .cta{display:block;text-align:center;background:#b06a4a;color:#fff;text-decoration:none;font-weight:600;padding:16px;border-radius:14px;margin-top:26px}
+.cta:focus-visible,a:focus-visible{outline:3px solid #2b2622;outline-offset:3px}
 .note{font-size:14px;color:#8a8078;margin-top:16px;text-align:center}
-.warn{background:#f4efe9;border-radius:12px;padding:14px 16px;font-size:14px;color:#5f574f;margin-top:18px}
-.list a{display:block;background:#fff;border:1px solid #e8e0d7;border-radius:14px;padding:16px 18px;margin-bottom:10px;text-decoration:none;color:inherit}
-.list b{display:block;font-size:17px;margin-bottom:2px}
-.list span{font-size:14px;color:#5f574f}
-footer{margin-top:44px;font-size:13px;color:#8a8078;text-align:center}</style></head>
-<body><div class="wrap"><div class="brand">TimeLocked</div>
-<h1>A pause between the impulse and the action.</h1>
-<p class="lead">Purchases, messages, trades, bets — hold the ones you'd regret until your head is clear.</p>
-<div class="list"><a href="/p/48-hour-purchase-rule/"><b>Impulse Shopping</b><span>Make every purchase wait 48 hours.</span></a><a href="/p/no-contact-protocol/"><b>Don’t Text Your Ex</b><span>Let your calm self protect your impulsive self.</span></a><a href="/p/trading-cooldown/"><b>Trading Cooldown</b><span>Never trade on the impulse that made you open the app.</span></a><a href="/p/2-hour-cool-down/"><b>Angry Message</b><span>Write it all now. Read it back in two hours.</span></a><a href="/p/evening-detox/"><b>Digital Detox</b><span>Close the apps that pull you in — on your terms.</span></a><a href="/p/24-hour-betting-pause/"><b>Gambling Pause</b><span>Put a full day between the urge and the bet.</span></a><a href="/p/sealed-key/"><b>Locked Secret</b><span>Hold a key or password out of impulsive reach.</span></a></div>
-<footer>TimeLocked — a pause between the impulse and the action.<br><a href="/">timelockedapp.com</a></footer>
+.warn{background:#f4efe9;border-radius:12px;padding:14px 16px;font-size:15px;color:#5f574f;margin-top:18px}
+footer{margin-top:56px;font-size:13px;color:#8a8078;text-align:center}
+footer a{margin:0 6px}
+@media(min-width:600px){h1{font-size:40px}}</style></head>
+<body><div class="wrap">
+<header><div class="brand">TimeLocked for iPhone</div>
+<h1>Lock a password away from yourself.</h1>
+<!-- WAIT-LENGTH: 2.6 → "up to 30 days" -->
+<p class="lead">TimeLocked keeps a password, a code or a card PIN out of your own reach until a wait you chose has passed — from an hour to a week. No friend needs to hold it for you.</p>
+<a class="cta" href="https://apps.apple.com/app/id6775219353">Get TimeLocked on the App Store</a>
+<p class="note">For iPhone. Every wait needs an iCloud account.</p>
+</header>
+
+<main>
+<section aria-labelledby="what">
+<h2 id="what">What it is</h2>
+<p>TimeLocked is an iPhone app for putting something out of your own reach for a while. You lock it, and when you want it back you have to ask and then wait. It's for the version of you who wants it back at 2am.</p>
+<p>A Pause tab does the same for a purchase link or a message you'd regret: it waits as long as you chose, then comes back and asks whether you still want it.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How it works</h2>
+<div class="card"><ul>
+<li>Name it, put the thing in, pick the wait. <!-- WAIT-LENGTH: 2.6 → "up to 30 days" -->Waits run from an hour to a week.</li>
+<li>When you want it back, ask. The wait starts then, and the entry opens when it's over. Nothing opens immediately — that's the point.</li>
+<li>Lock it again and the next time waits too.</li>
+<li>The wait is timed by Apple's iCloud servers, not by your phone's clock.</li>
+<li>Make a wait longer whenever you like and it applies at once. Make it shorter and the new length only takes effect once the old one has passed.</li>
+</ul></div>
+</section>
+
+<section aria-labelledby="lock">
+<h2 id="lock">What people lock away</h2>
+<ul>
+<li>A social media password, right after changing it</li>
+<li>Recovery codes and backup codes</li>
+<li>A card PIN or a card number</li>
+<li>The login for a betting site, a shop or a game</li>
+<li>Photos you keep going back to</li>
+</ul>
+</section>
+
+<section aria-labelledby="protects">
+<h2 id="protects">What it protects against, and what it doesn't</h2>
+<p>TimeLocked protects you from you. It is not a safe against someone else: anyone who can unlock your iPhone can open what's past its wait, unless you add a master password.</p>
+<p>It is a delay, not a backup. The developer has no server of its own and can't read what you lock, so can't open it for you either. Keep your own offline copy of anything you can't afford to lose.</p>
+</section>
+
+<section aria-labelledby="kept">
+<h2 id="kept">Where your things are kept</h2>
+<ul>
+<li>What's inside an entry is encrypted with AES-256-GCM the moment you save.</li>
+<li>The name you give an entry is not encrypted, so don't put the password itself in the name.</li>
+<li>Entries and their waits live on your phone and in your private iCloud.</li>
+<li>Photos and voice notes aren't synced to iCloud: deleting the app deletes them, unless you restore from a device backup.</li>
+<li>For an entry that's in iCloud, deleting the app doesn't end the wait — the key stays in your Keychain and the clock is Apple's.</li>
+<li>The app opens with Face ID or your iPhone passcode, and you can add a six-digit code of its own. A master password takes the key out of iCloud and puts it behind a password only you know.</li>
+</ul>
+</section>
+
+<section aria-labelledby="premium">
+<h2 id="premium">Premium</h2>
+<p>Premium adds two things: closing the apps you pick while something waits, or every night on your schedule, and keeping more than three things in the Vault. Every wait length, and opening what you locked, stays outside Premium.</p>
+</section>
+
+<section aria-labelledby="faq">
+<h2 id="faq">Questions people ask</h2>
+<!-- Mirrored word for word in the FAQPage JSON-LD in <head>: change both. -->
+
+<h3>Is there an iPhone app that locks a password away from myself for a set time?</h3>
+<!-- WAIT-LENGTH: 2.6 → "Waits run up to 30 days." -->
+<p>Yes. TimeLocked does exactly that. Put in the password, a code or a card PIN, pick a wait and lock it. When you want it back, ask: the wait starts then, and the entry opens only when it's over. Waits run from an hour to a week. No friend needs to hold it for you.</p>
+
+<h3>How do I lock myself out of a social media account for a few days?</h3>
+<p>Change the account's password, put the new password in TimeLocked, lock it, and log out. You get back in only once the wait you chose has passed after you ask for it.</p>
+
+<h3>Can I lock my betting account password for a month?</h3>
+<!-- WAIT-LENGTH: 2.6 → rewrite: "Yes: waits run up to 30 days." Keep the self-exclusion and helpline lines. -->
+<p>Not yet: the longest wait in TimeLocked today is a week. You can lock a betting login for up to a week and lock it again when it opens. For a month or longer, self-exclusion is the stronger tool: national schemes such as GAMSTOP in the UK, and the self-exclusion licensed operators offer, block the account itself, not just the password on your phone. If gambling is hurting you, free confidential help: 1-800-MY-RESET (1-800-697-3738) in the US, 0808 8020 133 in the UK.</p>
+
+<h3>Is it safe to store passwords in TimeLocked?</h3>
+<p>It's made for passwords and codes you want out of your own reach for a while, and for recovery codes. It is a delay, not a backup: keep your own copy of anything you can't afford to lose. What's inside an entry is encrypted with AES-256-GCM the moment you save; the name you give it isn't, so don't put the password in the name. The developer has no server of its own and can't read what you lock, so can't open it for you either. Anyone who can unlock your iPhone can open what's past its wait, unless you add a master password.</p>
+
+<h3>Can I get it back early?</h3>
+<p>No. Once you ask, the entry opens only after the wait you chose. The wait is timed by Apple's iCloud servers, not by your phone's clock. You can make a wait longer whenever you like and it applies at once; make it shorter and the new length only takes effect once the old one has passed.</p>
+
+<h3>What happens if I delete the app?</h3>
+<p>For an entry that's in your iCloud, deleting the app doesn't end the wait: the key stays in your Keychain and the clock is Apple's. An entry that isn't in iCloud (sync is off, or it hasn't uploaded yet) is deleted with the app, unless you restore from a device backup. Photos and voice notes aren't synced to iCloud, so deleting the app deletes them, unless you restore from a device backup.</p>
+
+<h3>Does TimeLocked need iCloud?</h3>
+<p>Yes. Every wait needs an iCloud account on the phone: each request to open and each time check is a small record in your private iCloud, with nothing of what you locked in it. With iCloud sync off, entries aren't synced, but the wait still uses your iCloud account. Without one, you can save an entry but not ask for it or open it.</p>
+
+<h3>Is TimeLocked free?</h3>
+<p>Every wait length, and opening what you locked, is free. Premium adds two things: closing the apps you pick while something waits, or every night on your schedule, and keeping more than three things in the Vault.</p>
+</section>
+
+<a class="cta" href="https://apps.apple.com/app/id6775219353">Get TimeLocked on the App Store</a>
+</main>
+
+<footer><a href="https://apps.apple.com/app/id6775219353">App Store</a>·<a href="https://vasilinoff.github.io/timelocked-legal/privacy.html">Privacy</a>·<a href="https://vasilinoff.github.io/timelocked-legal/support.html">Support</a></footer>
 </div></body></html>

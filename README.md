@@ -1,14 +1,18 @@
 # timelockedapp.com
 
-Static site behind TimeLocked invite links. Generated from the app's protocol
-catalog (`TimeLocked/Domain/Entities/DecisionProtocol.swift`) so the copy here
-can't drift from the copy in the app.
+Static site for TimeLocked: the home page answer engines read, plus the old
+invite pages. Hand-edited; there is no generator any more (see below).
 
 ## What it serves
 
-- `/` — landing, lists the protocols
-- `/p/<slug>/` — one page per protocol, the target of a shared invite. Opens the
-  app if it's installed, explains the rule if it isn't.
+- `/` — the home page: what the app does, its limits, an FAQ, and JSON-LD
+  (`SoftwareApplication` + `FAQPage`). The FAQ text is in the page twice, visible
+  and in the JSON-LD: change both.
+- `/llms.txt`, `/robots.txt`, `/sitemap.xml`, `/404.html` (without a 404 page,
+  Pages answers every unknown path with the home page and a 200).
+- `/p/<slug>/` — one page per old protocol, the target of a shared invite. The
+  app dropped protocols and invite links in JOPA-699, so the link now just opens
+  the app; the pages stay because old links and the AASA point here.
 - `/.well-known/apple-app-site-association` — Universal Links. Apple fetches it
   over https, expects **200** and **application/json**, and **does not follow
   redirects**. `_headers` sets the content type, since the file has no extension.
@@ -30,7 +34,14 @@ can't drift from the copy in the app.
 If the apex ends up redirecting to `www`, either drop that redirect or declare
 both hosts — Apple will not follow it.
 
-## Regenerating
+## Editing
 
-The pages are generated from the Swift catalog; when protocol copy changes in
-the app, regenerate rather than hand-editing here.
+The pages used to be generated from the app's protocol catalog, which was
+deleted from the app in JOPA-699, so edit the HTML directly.
+
+Every claim must be one the App Store text makes, worded no stronger
+(`TimeLocked/marketing/appstore/store-copy.md`, its rules and claim table).
+
+When 2.6 ships, the wait length becomes "up to 30 days": every spot is marked
+`WAIT-LENGTH` in `index.html` and `llms.txt`, and the JSON-LD FAQ answers need the
+same change.
