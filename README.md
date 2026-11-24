@@ -17,22 +17,24 @@ invite pages. Hand-edited; there is no generator any more (see below).
   over https, expects **200** and **application/json**, and **does not follow
   redirects**. `_headers` sets the content type, since the file has no extension.
 
-## Deploy (Cloudflare Pages — the domain is already on Cloudflare)
+## Deploy (Cloudflare Pages, project `timelockedapp`)
 
-1. Cloudflare dashboard → Workers & Pages → Create → Pages → connect this repo.
-2. Framework preset **None**, build command empty, output directory `/`.
-3. Custom domains → add `timelockedapp.com`. DNS records are added automatically.
-4. Verify — must be `200` and `application/json`, with no redirect:
+Pages is **not** connected to this repo: a push deploys nothing. Deploy the
+committed tree by hand (wrangler is logged in on the Mac):
 
-   ```bash
-   curl -sI https://timelockedapp.com/.well-known/apple-app-site-association
-   ```
+```bash
+D=$(mktemp -d) && git archive HEAD | tar -x -C "$D" && rm "$D/README.md"
+wrangler pages deploy "$D" --project-name timelockedapp --branch main \
+  --commit-hash "$(git rev-parse HEAD)" --commit-message "$(git log -1 --format=%s)"
+```
 
-5. In Xcode: app target → Signing & Capabilities → **+ Associated Domains** →
-   `applinks:timelockedapp.com`.
+Then check — the AASA must be `200` and `application/json`, with no redirect
+(Apple fetches it over https and does not follow redirects):
 
-If the apex ends up redirecting to `www`, either drop that redirect or declare
-both hosts — Apple will not follow it.
+```bash
+curl -sI https://timelockedapp.com/.well-known/apple-app-site-association
+curl -s https://timelockedapp.com/llms.txt | head -3
+```
 
 ## Editing
 
