@@ -41,7 +41,3 @@ deleted from the app in JOPA-699, so edit the HTML directly.
 
 Every claim must be one the App Store text makes, worded no stronger
 (`TimeLocked/marketing/appstore/store-copy.md`, its rules and claim table).
-
-When 2.6 ships, the wait length becomes "up to 30 days": every spot is marked
-`WAIT-LENGTH` in `index.html` and `llms.txt`, and the JSON-LD FAQ answers need the
-same change.

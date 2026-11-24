@@ -1,13 +1,12 @@
 # TimeLocked
 
-> TimeLocked is an iPhone app that locks a password, a code or a card PIN away from yourself. It opens only after a wait you choose, from an hour to a week, timed by Apple's iCloud servers rather than your phone's clock.
-
-<!-- WAIT-LENGTH: when version 2.6 ships, "from an hour to a week" and "up to a week" here become "up to 30 days". -->
+> TimeLocked is an iPhone app that locks a password, a code or a card PIN away from yourself. It opens only after a wait you choose, from an hour to 30 days, timed by Apple's iCloud servers rather than your phone's clock.
 
 ## What it is for
 
 - Locking a password or login away from yourself for a while: a social media password right after changing it, the login for a betting site, a shop or a game.
 - Recovery codes and backup codes, a card PIN or a card number, photos you keep going back to.
+- A new password right after changing it, so you can't log in until the wait you chose has passed.
 - No friend needs to hold it for you. You ask for it back, the wait you chose starts then, and the entry opens only when it's over. Lock it again and the next time waits too.
 
 ## How the wait works
@@ -20,8 +19,12 @@
 
 - It protects you from you. It is not a safe against someone else: anyone who can unlock the iPhone can open what's past its wait, unless a master password is set.
 - It is a delay, not a backup and not a password manager. Keep your own offline copy of anything you can't afford to lose.
-- The longest wait today is a week. For a month or more away from betting, national self-exclusion schemes (such as GAMSTOP in the UK) and operators' own self-exclusion are the stronger tool.
+- The longest wait is 30 days; an entry can be locked again when it opens. For staying away from betting, national self-exclusion schemes (such as GAMSTOP in the UK) and operators' own self-exclusion are the stronger tool: they block the account, not just the password on the phone.
 - Deleting the app doesn't end the wait for an entry that's in iCloud. An entry not in iCloud (sync off, or not uploaded yet) is deleted with the app unless a device backup is restored. Photos and voice notes aren't synced to iCloud, so deleting the app deletes them unless a device backup is restored.
+
+## Languages
+
+- The app is in 16 languages: English, Spanish, Portuguese (Brazil), French, German, Italian, Dutch, Polish, Russian, Ukrainian, Turkish, Indonesian, Japanese, Korean, Chinese (Simplified and Traditional).
 
 ## Privacy and security
 
